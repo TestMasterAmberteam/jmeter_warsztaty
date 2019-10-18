@@ -19,9 +19,9 @@ Zamów najtańszy bilet lotniczy na danej trasie.
      - treść message'a musi mieć następującą formę: `{lotnisko wylotu}->{lotnisko przylotu}`
   1. Odbierz wszystkie dostępne loty (loty kończą się messagem o treści `END`
   1. Wyśli zlecenie zakupu najtańszego lotu 
-     - treść message'a musi mieć następującą formę `buy:{timestamp lotu}:{cena}`
+     - treść message'a musi mieć następującą formę `{team}:buy:{timestamp lotu}:{cena}`
 
-W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańszą opcją przedstawioną przez serwer. Dopiero wtedy request zostanie zaliczony i pojawi się w statystykach. 
+W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańszą opcją przedstawioną przez serwer. Dopiero wtedy request zostanie zaliczony i pojawi się w statystykach. `{team}` oznacza drużynę uczestnika warsztatów 'red' albo 'blue'.
 
 ## JMS
 Przejdź proces zamówienia kawy (zamówienie, odbiór)
