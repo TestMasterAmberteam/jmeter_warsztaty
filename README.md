@@ -10,12 +10,23 @@ Materiały do/z warsztatów JMetera przeprowadzonych na Testwarez 2019
 ## SOAP
 Sprawdź dane kota po imieniu
 
-## WebSocket
+## WebSocket - Zakup biletu lotniczego
+Zamów najtańszy bilet lotniczy na danej trasie. 
+
+### Kroki testu
+  1. Zapytaj o dostępne lotniska: `ws://{serwer}:{port}/get_cities`
+  1. Zapytaj o loty z wybranego (losowego) lotniska do innego wybranego (losowego) lotniska: `ws://{serwer}:{port}/get_flights`
+     - treść message'a musi mieć następującą formę: `{lotnisko wylotu}->{lotnisko przylotu}`
+  1. Odbierz wszystkie dostępne loty (loty kończą się messagem o treści `END`
+  1. Wyśli zlecenie zakupu najtańszego lotu 
+     - treść message'a musi mieć następującą formę `buy:{timestamp lotu}:{cena}`
+
+W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańszą opcją przedstawioną przez serwer. Dopiero wtedy request zostanie zaliczony i pojawi się w statystykach. 
 
 ## JMS
 Przejdź proces zamówienia kawy (zamówienie, odbiór)
 
-## Plik
+## Plik - Wysyłanie przelewów
 ### Cel testu
 Zapisać w podanym katalogu udostępnionym plik zawierający przelewy. Każdy przelew jest na 1PLN, więc kwoty nie podajemy.  
 Plik składa się z następujących linii:
