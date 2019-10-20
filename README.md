@@ -3,12 +3,35 @@ Materiały do/z warsztatów JMetera przeprowadzonych na Testwarez 2019
 
 # Przypadki testowe do zautomatyzowania
 ## REST
-  1. Wyślij wiadomość z użyciem JSON body (+sprawdzenie czy wiadomość się dodała po ID)
-  1. Wyślij wiadomość z użyciem parametrów (+jw)
-  1. Sprawdź wiadomości
+### Wiadomość z JSON body
+Kroki:
+
+    1. Wyślij wiadomość POST na http://{serwer}:{port}/api/message z body w formacie JSON:
+    {
+      "message": "{wiadomość}",
+      "teamColor": "{kolor zespołu}"
+    }
+    2. Zapytaj o wiadomość z id otrzymanym w wyniku zapytania z kroku 1 GET http://{serwer}:{port}/api/message?id=
+    3*. Co 100 wysłanych wiadomości zapytaj system o wszystkie wiadomości GET http://{serwer}:{port}/api/messages/{kolor zespołu}
+### Wiadomość z użyciem parametrów
+Kroki:
+ 
+     1. Wyślij wiadomość POST na http://{serwer}:{port}/api/parametrized-message?team={kolor zespołu}&message={wiadomość}
+     2. Zapytaj o wiadomość z id otrzymanym w wyniku zapytania z kroku 1 GET http://{serwer}:{port}/api/message?id=
+     3*. Co 100 wysłanych wiadomości zapytaj system o wszystkie wiadomości GET http://{serwer}:{port}/api/messages/{kolor zespołu}    
 
 ## SOAP
-Sprawdź dane kota po imieniu
+### Sprawdź dane kota po imieniu
+Dane wejściowe:
+
+    Lista kocich imion: Filemon, Fryderyk, Klakier, Mruczek, Ada, Stefan
+    Plik wsdl dostępny na: http://{serwer}:{port}/soap/cats.wsdl
+
+Kroki:
+
+    1. Wykonaj 100 zapytań do webserwisu soap używając pseudolosowego wyboru imienia kota oraz wpisując kolor swojego zespołu na http://{serwer}:{port}/soap 
+    Nazwij krok testowy tak, aby w raporcie możnabyło łatwo zagregować wyniki według kociego imienia
+    
 
 ## WebSocket - Zakup biletu lotniczego
 Zamów najtańszy bilet lotniczy na danej trasie. 
@@ -24,7 +47,13 @@ Zamów najtańszy bilet lotniczy na danej trasie.
 W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańszą opcją przedstawioną przez serwer. Dopiero wtedy request zostanie zaliczony i pojawi się w statystykach. `{team}` oznacza drużynę uczestnika warsztatów 'red' albo 'blue'.
 
 ## JMS
-Przejdź proces zamówienia kawy (zamówienie, odbiór)
+### Przejdź proces zamówienia kawy (zamówienie, odbiór)
+Kroki:
+
+    1. Wyślij do kolejki zamówienie kawy: GET http://{serwer}:{port}/jms/publish z JSON body:
+    {"name":"{nazwa kawy}", "teamColor":"{kolor zespołu}"}
+    
+    2. Odbierz z kolejki coffee.queue zamówienie (?)
 
 ## Plik - Wysyłanie przelewów
 ### Cel testu
