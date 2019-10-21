@@ -8,8 +8,7 @@
 ## Smok
 Smoki są dwa `red` oraz `blue`. Na początku gry mają 1M HP. 
 
-Smoki w każdej turze zadają losowo od 100 do 1000 obrażeń, które są dzielone równo na wszystkich biorących udział
-w ataku. 
+Smoki w każdej turze zadają losowo od 100 do 1000 obrażeń. Smok strzela kulą ognia, która uderza w graczy "po kolei" i zabija graczy dopóki nie straci mocy.  
 
 ## Gracze
 Gracze są podzieleni na trzy klasy:
