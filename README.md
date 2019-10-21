@@ -45,3 +45,4 @@ Napisać skrypt, który będzie generował 100 przelewów na 15s dla całego zes
 Wygrywa zespół, który będzie najbliżej zadanej wartości. Wykres pokazuje o ile bliżej celu jest dany zespół od drugiego zespołu. 
 
 ## Baza danych
+Zajrzyj do dragon_README.md
