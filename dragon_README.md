@@ -82,6 +82,19 @@ Kod podatności to `hngr`. Atak polega na wyczarowaniu barana wypchanego siarką
 należy podać timestamp wyprodukowania barana, bo smok za starego nie zje (max 1 tura), a jeżeli baran bęszie "z przyszłości", 
 to pozna oszustwo i też się nim nie zainteresuje. 
 
+### Historia ataków
+W systemie przechowywana jest hitoria ataków, tak żeby implementujący skrypt mógł sprawdzić skuteczność zaimplementowanych ataków. 
+```sql
+CREATE TABLE public.attack_history
+(
+    player integer NOT NULL,
+    type character varying(4) COLLATE pg_catalog."default" NOT NULL,
+    param character varying(32) COLLATE pg_catalog."default" NOT NULL,
+    moment integer NOT NULL,
+    damage integer NOT NULL
+)
+```
+
 ## Konto bazodanowe
 Konto, którym można się połączyć do bazy to `player` hasło `//24|soon|POEM|tiny|57//`
 
