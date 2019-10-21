@@ -2,7 +2,7 @@
 Materiały do/z warsztatów JMetera przeprowadzonych na Testwarez 2019
 
 # Przypadki testowe do zautomatyzowania
-## REST
+## REST - Wysyłanie wiadomości
 ### Wiadomość z JSON body
 Kroki:
   1. Wyślij wiadomość POST na http://{serwer}:{port}/api/message z body w formacie JSON:
@@ -21,7 +21,7 @@ Kroki:
   1. Zapytaj o wiadomość z id otrzymanym w wyniku zapytania z kroku 1 GET http://{serwer}:{port}/api/message?id=
   1. *Co 100 wysłanych wiadomości zapytaj system o wszystkie wiadomości GET http://{serwer}:{port}/api/messages/{kolor zespołu}    
 
-## SOAP
+## SOAP - Imiona kotów
 ### Sprawdź dane kota po imieniu
 Dane wejściowe:
   - Lista kocich imion: Filemon, Fryderyk, Klakier, Mruczek, Ada, Stefan
@@ -45,12 +45,17 @@ Zamów najtańszy bilet lotniczy na danej trasie.
 
 W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańszą opcją przedstawioną przez serwer. Dopiero wtedy request zostanie zaliczony i pojawi się w statystykach. `{team}` oznacza drużynę uczestnika warsztatów 'red' albo 'blue'.
 
-## JMS
+## JMS - Zamawianie kawy
 ### Przejdź proces zamówienia kawy (zamówienie, odbiór)
 Kroki:
-    1. Wyślij do kolejki zamówienie kawy: GET http://{serwer}:{port}/jms/publish z JSON body:
-       ```{"name":"{nazwa kawy}", "teamColor":"{kolor zespołu}"}```
-    1. Odbierz z kolejki coffee.queue zamówienie (?)
+  1. Wyślij do kolejki zamówienie kawy: GET http://{serwer}:{port}/jms/publish z JSON body:
+     ```
+     {
+       "name":"{nazwa kawy}", 
+       "teamColor":"{kolor zespołu}"
+     }
+     ```
+  1. Odbierz z kolejki coffee.queue zamówienie (?)
 
 ## Plik - Wysyłanie przelewów
 ### Cel testu
