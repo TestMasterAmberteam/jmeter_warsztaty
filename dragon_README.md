@@ -1,5 +1,5 @@
 # Uruchomienie
-`python dragon.py`
+`python3 dragon.py`
 
 
 
@@ -83,17 +83,22 @@ należy podać timestamp wyprodukowania barana, bo smok za starego nie zje (max 
 to pozna oszustwo i też się nim nie zainteresuje. 
 
 ### Historia ataków
-W systemie przechowywana jest hitoria ataków, tak żeby implementujący skrypt mógł sprawdzić skuteczność zaimplementowanych ataków. 
+W systemie przechowywane jest ostatni 10 minut hitorii ataków, tak żeby implementujący skrypt mógł sprawdzić skuteczność zaimplementowanych ataków. 
 ```sql
 CREATE TABLE public.attack_history
 (
     player integer NOT NULL,
     type character varying(4) COLLATE pg_catalog."default" NOT NULL,
-    param character varying(32) COLLATE pg_catalog."default" NOT NULL,
+    param character varying(32) COLLATE pg_catalog."default",
     moment integer NOT NULL,
     damage integer NOT NULL
 )
 ```
+- player - id gracza
+- type - typ ataku
+- param - parametry ataku
+- moment - timestamp ataku
+- damage - obrażenia 
 
 ## Konto bazodanowe
 Konto, którym można się połączyć do bazy to `player` hasło `//24|soon|POEM|tiny|57//`
