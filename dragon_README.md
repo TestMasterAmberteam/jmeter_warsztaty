@@ -73,14 +73,30 @@ CREATE TABLE public.weak_spot
 ```
 
 ##### Słabe punkty i zaklęcia działające na nie
+
 ###### Przerwa między łuskami / Abrakadabra - 25 DMG
 Kod podatności to `scal`. Żeby skutecznie rzucić zaklęcie *Abrakadabra* należy wykonać atak o kodzie `abra` z parametrem
 równym MD5 opisu miejsca dziury (kolumny `description`)
 
 ###### Smok głodny / Baran - 50 DMG
 Kod podatności to `hngr`. Atak polega na wyczarowaniu barana wypchanego siarką (kod ataku `ram`). Jako parametr ataku 
-należy podać timestamp wyprodukowania barana, bo smok za starego nie zje (max 1 tura), a jeżeli baran bęszie "z przyszłości", 
+należy podać timestamp przywołania barana, bo smok za starego nie zje (max 1 tura), a jeżeli baran bęszie "z przyszłości", 
 to pozna oszustwo i też się nim nie zainteresuje. 
+
+###### Skaner / Blow - 75 DMG
+Każdy mag ma *apparatus*, który skanuje smoka i wyszukuje układy łusek szczególnie podatne na zaklęcia.
+ŻeZaklęcie zaklęcie (o kodzie `blow`) było skuteczne trzeba mu liczbę parzystych *HEXów* w wyniku skanowania.  
+Kod tej podatności to `scnr`.
+
+###### Lorem / Lodowy pocisk - 100 DMG
+*Apparatus* potrafi też podawać (jeżeli wykryje) *lorem ipsum tameta* smoka, w który należy strzelić lodowym 
+pociskiem, żeby smoka osłabić.  
+Kod podatności `lore`, kod ataku `ice` z parametrem równym *lorem*. 
+
+###### Niespodzianka - 10000 HP
+Mag może zawsze w ostateczności spróbować przestraszyć smoka krzykiem. Jak wiadomo szanse jedna na mililion zawsze
+się spełniają. Smok liczy szybko MD5 tego co mag krzynknął i czuje się zaskoczony jeżeli cyfra hasha wskazana przez pierwszą cyfrę hasha będzie równa będzie równa cyfrze hasha wskazanej przez ostatnią cyfrę hasha. Smok indeksuje cyfry oczywiście od zera.  
+Zaskoczony smok zamiera na chwilę i w tym momencie jest bardzo łatwym celem. Kod ataku `shoo`
 
 ### Historia ataków
 W systemie przechowywane jest ostatni 10 minut hitorii ataków, tak żeby implementujący skrypt mógł sprawdzić skuteczność zaimplementowanych ataków. 
