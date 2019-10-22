@@ -49,8 +49,11 @@ W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańs
 ### Przejdź proces zamówienia kawy (zamówienie, odbiór)
 Kroki:
   1. Wyślij do kolejki zamówienie kawy do kolejki coffee.in tcp://{server}:{port}
+  
   user: system
+  
   pw: podamy na zajęciach
+  
   (ew po HTTP: GET http://{serwer}:{port}/jms/publish ) z JSON body:
      ```
      {
