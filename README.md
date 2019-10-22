@@ -48,14 +48,17 @@ W ostatnim message'u `{timestamp lotu}` i `{cena}` muszą być zgodne z najtańs
 ## JMS - Zamawianie kawy
 ### Przejdź proces zamówienia kawy (zamówienie, odbiór)
 Kroki:
-  1. Wyślij do kolejki zamówienie kawy: GET http://{serwer}:{port}/jms/publish z JSON body:
+  1. Wyślij do kolejki zamówienie kawy do kolejki coffee.in tcp://{server}:{port}
+  user: system
+  pw: podamy na zajęciach
+  (ew po HTTP: GET http://{serwer}:{port}/jms/publish ) z JSON body:
      ```
      {
        "name":"{nazwa kawy}", 
        "teamColor":"{kolor zespołu}"
      }
      ```
-  1. Odbierz z kolejki coffee.queue zamówienie (?)
+  1. Odbierz z kolejki coffee.out zamówienie 
 
 ## Plik - Wysyłanie przelewów
 ### Cel testu
