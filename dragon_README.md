@@ -89,14 +89,12 @@ Każdy mag ma *apparatus*, który skanuje smoka i wyszukuje układy łusek szcze
 Kod tej podatności to `scnr`.
 
 ###### Lorem / Lodowy pocisk - 100 DMG
-*Apparatus* potrafi też podawać (jeżeli wykryje) *lorem ipsum tameta* smoka, w który należy strzelić lodowym 
+*Apparatus* potrafi też podawać (jeżeli wykryje) *lorem ipsum dolora* smoka, w który należy strzelić lodowym 
 pociskiem, żeby smoka osłabić.  
 Kod podatności `lore`, kod ataku `ice` z parametrem równym *lorem*. 
 
 ###### Niespodzianka - 10000 HP
-Mag może zawsze w ostateczności spróbować przestraszyć smoka krzykiem. Jak wiadomo szanse jedna na mililion zawsze
-się spełniają. Smok liczy szybko MD5 tego co mag krzynknął i czuje się zaskoczony jeżeli cyfra hasha wskazana przez pierwszą cyfrę hasha będzie równa będzie równa cyfrze hasha wskazanej przez ostatnią cyfrę hasha. Smok indeksuje cyfry oczywiście od zera.  
-Zaskoczony smok zamiera na chwilę i w tym momencie jest bardzo łatwym celem. Kod ataku `shoo`
+Mag może zawsze w ostateczności spróbować przestraszyć smoka krzykiem. Jak wiadomo szanse jedna na mililion zawsze się spełniają. Smok liczy szybko MD5 tego co mag krzynknął jeżeli w hashu powjawi się minimum 3 razy słowo *d1e*, to smok zamiera na chwilę i w tym momencie jest bardzo łatwym celem. Kod ataku `shoo`
 
 ### Historia ataków
 W systemie przechowywane jest ostatni 10 minut hitorii ataków, tak żeby implementujący skrypt mógł sprawdzić skuteczność zaimplementowanych ataków. 
