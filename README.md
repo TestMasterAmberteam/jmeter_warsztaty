@@ -55,6 +55,7 @@ Kroki:
   pw: podamy na zajęciach
   
   (ew po HTTP: GET http://{serwer}:{port}/jms/publish ) z JSON body:
+  
      ```
      {
        "name":"{nazwa kawy}", 
