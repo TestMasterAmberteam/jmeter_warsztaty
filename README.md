@@ -31,7 +31,7 @@ Kroki:
   1. Wykonaj 100 zapytań do webserwisu soap używając pseudolosowego wyboru imienia kota oraz wpisując kolor swojego zespołu na http://{serwer}:{port}/soap 
      Nazwij krok testowy tak, aby w raporcie możnabyło łatwo zagregować wyniki według kociego imienia
      
-   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tes="testwarez.pl">
+   `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tes="testwarez.pl">
    <soapenv:Header/>
    <soapenv:Body>
       <tes:getCatRequest>
@@ -39,7 +39,7 @@ Kroki:
          <tes:team>{teamColor}</tes:team>
       </tes:getCatRequest>
    </soapenv:Body>
-   </soapenv:Envelope>
+   </soapenv:Envelope>`
     
 
 ## WebSocket - Zakup biletu lotniczego
