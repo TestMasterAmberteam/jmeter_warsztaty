@@ -24,12 +24,22 @@ Kroki:
 ## SOAP - Imiona kotów
 ### Sprawdź dane kota po imieniu
 Dane wejściowe:
-  - Lista kocich imion: Filemon, Fryderyk, Klakier, Mruczek, Ada, Stefan
+  - Lista kocich imion: filemon, fryderyk, klakier, mruczek, ada, stefan
   - Plik wsdl dostępny na: http://{serwer}:{port}/soap/cats.wsdl
 
 Kroki:
   1. Wykonaj 100 zapytań do webserwisu soap używając pseudolosowego wyboru imienia kota oraz wpisując kolor swojego zespołu na http://{serwer}:{port}/soap 
      Nazwij krok testowy tak, aby w raporcie możnabyło łatwo zagregować wyniki według kociego imienia
+     
+   `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tes="testwarez.pl">   
+   <soapenv:Header/>   
+   <soapenv:Body>   
+      <tes:getCatRequest>      
+         <tes:name>{catName}</tes:name>         
+         <tes:team>{teamColor}</tes:team>         
+      </tes:getCatRequest>      
+   </soapenv:Body>   
+   </soapenv:Envelope>`
     
 
 ## WebSocket - Zakup biletu lotniczego
@@ -60,6 +70,8 @@ Kroki:
      {
        "name":"{nazwa kawy}", 
        "teamColor":"{kolor zespołu}"
+       "senderId":"{imię wysyłającego}"
+       "messageId":"{Id wiadomości}"
      }
      ```
   1. Odbierz z kolejki coffee.out zamówienie 
