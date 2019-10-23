@@ -24,7 +24,7 @@ Kroki:
 ## SOAP - Imiona kotów
 ### Sprawdź dane kota po imieniu
 Dane wejściowe:
-  - Lista kocich imion: Filemon, Fryderyk, Klakier, Mruczek, Ada, Stefan
+  - Lista kocich imion: filemon, fryderyk, klakier, mruczek, ada, stefan
   - Plik wsdl dostępny na: http://{serwer}:{port}/soap/cats.wsdl
 
 Kroki:
